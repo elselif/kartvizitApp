@@ -11,6 +11,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -27,9 +29,15 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatSnackBarModule
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide:'apiUrl',
+      useValue : 'https://demo.limantech.com/cards/public/api'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
